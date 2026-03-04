@@ -7,7 +7,25 @@ export default defineConfig({
     react(),
     vitePluginSitemap({
       hostname: "https://yourdomain.com",
-      routes: ["/", "/about", "/projects", "/contact"],
+      routes: [
+        "/",
+        "/about",
+        "/portfolio",
+        "/skills",
+        "/experience",
+        "/contact",
+      ],
+      exclude: ["/404"],
+      lastmod: new Date().toISOString(),
+      changefreq: "weekly",
+      priority: {
+        "/": 1.0,
+        "/about": 0.8,
+        "/portfolio": 0.9,
+        "/skills": 0.8,
+        "/experience": 0.8,
+        "/contact": 0.7,
+      },
     }),
   ],
 });

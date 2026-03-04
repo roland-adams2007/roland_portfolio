@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import {
     ExternalLink, Github, Globe, Layers, Zap, Star, Eye, Code2, ArrowUpRight, Filter
 } from "lucide-react";
@@ -198,20 +197,6 @@ const Portfolio = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Portfolio - Roland Adams</title>
-                <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta
-                    name="description"
-                    content="Portfolio of Roland Adams - Full-Stack Developer. Explore projects built with React, Node.js, Laravel, and more."
-                />
-                <meta name="author" content="Roland Adams" />
-                <meta
-                    name="keywords"
-                    content="Roland Adams, Full-Stack Developer, JavaScript, React, Node.js, Tailwind CSS, PHP, Laravel, portfolio, web development"
-                />
-            </Helmet>
             <div className="wrapper">
                 <main>
                     <section className="portfolio-section">

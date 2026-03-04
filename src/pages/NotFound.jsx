@@ -1,22 +1,10 @@
-import { Helmet } from "react-helmet-async";
+
 import { Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
 function NotFound() {
     return (
         <>
-            <Helmet>
-                <title>404 | Page Not Found - Roland Adams</title>
-                <meta
-                    name="description"
-                    content="The page you're looking for doesn't exist. Return to Roland Adams' portfolio homepage."
-                />
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap"
-                    rel="stylesheet"
-                />
-            </Helmet>
-
 
             <main>
                 <div className="not-found-container text-center font-['Urbanist'] py-20">

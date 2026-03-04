@@ -1,7 +1,6 @@
 
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import me from "../assets/me.jpg";
 
 import {
@@ -14,9 +13,6 @@ const About = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (typeof window !== "undefined" && window.lucide) {
-            window.lucide.createIcons();
-        }
 
         // Parallax effect for hero section
         const handleScroll = () => {
@@ -112,27 +108,11 @@ const About = () => {
 
     return (
         <>
-            <Helmet>
-                <title>About - Roland Adams</title>
-                <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta
-                    name="description"
-                    content="Portfolio of Roland Adams, a passionate Full-Stack Developer creating innovative solutions with JavaScript, React, Node.js, and more."
-                />
-                <meta name="author" content="Roland Adams" />
-                <meta
-                    name="keywords"
-                    content="Roland Adams, Full-Stack Developer, JavaScript, React, Node.js, Tailwind CSS, PHP, Laravel, portfolio, web development"
-                />
-
-            </Helmet>
-
             <div className="wrapper">
                 <main>
                     <section className="about__section" id="about">
                         <div className="profile-container">
-                        <div className="profile-picture" id="profilePicture">
+                            <div className="profile-picture" id="profilePicture">
                                 <img src={me} alt="Roland Adams" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                                 <div className="profile-upload-overlay">
                                     <Camera size={20} />

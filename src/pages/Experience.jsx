@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 
 import {
     Briefcase, Trophy, GraduationCap, Code2, BookOpen, Award, Rocket, SparklesIcon, Users, MessageSquare
@@ -102,20 +101,6 @@ const Experience = () => {
 
     return (
         <>
-            <Helmet>
-                <title>Experience - Roland Adams</title>
-                <meta charSet="UTF-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <meta
-                    name="description"
-                    content="Portfolio of Roland Adams, a passionate Full-Stack Developer creating innovative solutions with JavaScript, React, Node.js, and more."
-                />
-                <meta name="author" content="Roland Adams" />
-                <meta
-                    name="keywords"
-                    content="Roland Adams, Full-Stack Developer, JavaScript, React, Node.js, Tailwind CSS, PHP, Laravel, portfolio, web development"
-                />
-            </Helmet>
 
             <div className="wrapper">
                 <main>

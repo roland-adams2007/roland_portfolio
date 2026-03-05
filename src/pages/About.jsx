@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import me from "../assets/me.jpg";
 
+
 import {
     Github, MessageCircle, Camera
 } from "lucide-react";
@@ -113,7 +114,7 @@ const About = () => {
                     <section className="about__section" id="about">
                         <div className="profile-container">
                             <div className="profile-picture" id="profilePicture">
-                                <img src={me} alt="Roland Adams" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                                <img src={me} alt="Roland Adams" loading="lazy" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
                                 <div className="profile-upload-overlay">
                                     <Camera size={20} />
                                 </div>

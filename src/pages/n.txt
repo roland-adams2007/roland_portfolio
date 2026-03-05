@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
-    ExternalLink, Github, Globe, Layers, Zap, Code2, ArrowUpRight, Filter
+    ExternalLink, Github, Globe, Layers, Zap, Star, Eye, Code2, ArrowUpRight, Filter
 } from "lucide-react";
 
 import ff from "../assets/ff.png";
@@ -9,71 +9,100 @@ import tixora from "../assets/tixora.png";
 import tf from "../assets/tf.png";
 import cp from "../assets/cp.png";
 import paynix from "../assets/paynix.png";
-
 const projects = [
     {
         id: 1,
-        title: "FileFlow",
-        description: "A cloud file storage platform similar to Cloudinary — upload, manage, and access your files from anywhere with a clean, minimal interface and fast delivery.",
-        tags: ["React", "Node.js", "MySQL", "Tailwind CSS"],
+        title: "E-Commerce Platform",
+        description: "A full-featured e-commerce platform with real-time inventory, payment integration, and admin dashboard. Built with React, Node.js, and MySQL.",
+        tags: ["React", "Node.js", "MySQL", "Stripe", "Tailwind CSS"],
         category: "Full-Stack",
         status: "Live",
-        github: "https://github.com/roland-adams2007/fileflow",
-        live: "https://fileflow-sable.vercel.app/",
-        image: ff,
-        accent: "#38bdf8",
+        stars: 48,
+        views: 1200,
+        github: "https://github.com",
+        live: "https://example.com",
+        gradient: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+        accent: "#e94560",
+        icon: "🛒",
     },
     {
         id: 2,
-        title: "Tixora",
-        description: "An event ticketing platform to discover, create, and manage events. Buy and sell tickets seamlessly with a smooth checkout experience.",
-        tags: ["React", "PHP", "MySQL", "Tailwind CSS"],
+        title: "Task Management App",
+        description: "Collaborative task manager with real-time updates, drag-and-drop board, team workspaces, and detailed analytics.",
+        tags: ["React", "Socket.io", "Express", "MongoDB"],
         category: "Full-Stack",
         status: "Live",
-        github: "https://github.com/roland-adams2007/tixora",
-        live: "https://tixora.com.ng/",
-        image: tixora,
-        accent: "#f97316",
+        stars: 33,
+        views: 870,
+        github: "https://github.com",
+        live: "https://example.com",
+        gradient: "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f2937 100%)",
+        accent: "#58a6ff",
+        icon: "✅",
     },
     {
         id: 3,
-        title: "CreatorSpace",
-        description: "A centralized workspace for creators and businesses to build, manage, and publish multiple websites — all from one powerful dashboard.",
-        tags: ["React", "Node.js", "MySQL", "Framer Motion"],
-        category: "Full-Stack",
-        status: "Live",
-        github: "https://github.com/roland-adams2007/CSpace",
-        live: "https://creatorspace-wine.vercel.app/",
-        image: cp,
+        title: "AI Content Generator",
+        description: "Web app that leverages AI APIs to generate blog posts, marketing copy, and social media content with customizable tone and style.",
+        tags: ["React", "OpenAI API", "Node.js", "Tailwind CSS"],
+        category: "AI / Frontend",
+        status: "In Progress",
+        stars: 21,
+        views: 540,
+        github: "https://github.com",
+        live: null,
+        gradient: "linear-gradient(135deg, #0a0a0a 0%, #1a0533 50%, #2d1b69 100%)",
         accent: "#a78bfa",
+        icon: "🤖",
     },
     {
         id: 4,
-        title: "TaskFlow",
-        description: "The ultimate task management platform that helps teams collaborate, organize, and achieve more. Track projects, manage deadlines, and boost productivity.",
-        tags: ["React", "Node.js", "MySQL"],
+        title: "Real Estate Listings",
+        description: "Property listing platform with advanced filters, map integration, user authentication, and inquiry management system.",
+        tags: ["Laravel", "PHP", "MySQL", "JavaScript", "Google Maps API"],
         category: "Full-Stack",
         status: "Live",
-        github: "https://github.com/roland-adams2007/taskflow",
-        live: "https://taskflow-nu-seven.vercel.app/",
-        image: tf,
-        accent: "#34d399",
+        stars: 19,
+        views: 430,
+        github: "https://github.com",
+        live: "https://example.com",
+        gradient: "linear-gradient(135deg, #0f0c00 0%, #1a1200 50%, #2d2000 100%)",
+        accent: "#fbbf24",
+        icon: "🏠",
     },
     {
         id: 5,
-        title: "Paynix",
-        description: "A modern online banking experience — manage your finances, send money, and track transactions through a sleek and intuitive interface.",
-        tags: ["React", "PHP", "Framer Motion", "Tailwind CSS"],
+        title: "Dev Portfolio Template",
+        description: "A sleek, modern portfolio template for developers with smooth animations, dark mode, and easy customization.",
+        tags: ["React", "CSS Animations", "Responsive"],
         category: "Frontend",
-        status: "Live",
-        github: "https://github.com/roland-adams2007/paynix",
-        live: "https://paynix-tau.vercel.app/",
-        image: paynix,
-        accent: "#fbbf24",
+        status: "Open Source",
+        stars: 76,
+        views: 2100,
+        github: "https://github.com",
+        live: "https://example.com",
+        gradient: "linear-gradient(135deg, #001a0d 0%, #002d1a 50%, #004d2e 100%)",
+        accent: "#34d399",
+        icon: "💼",
+    },
+    {
+        id: 6,
+        title: "Community Forum",
+        description: "Full-featured discussion forum with threaded replies, voting, moderation tools, and rich text editing.",
+        tags: ["React", "Node.js", "PostgreSQL", "Redis"],
+        category: "Full-Stack",
+        status: "In Progress",
+        stars: 14,
+        views: 280,
+        github: "https://github.com",
+        live: null,
+        gradient: "linear-gradient(135deg, #0d0005 0%, #1a000d 50%, #2d0018 100%)",
+        accent: "#f472b6",
+        icon: "💬",
     },
 ];
 
-const categories = ["All", "Full-Stack", "Frontend"];
+const categories = ["All", "Full-Stack", "Frontend", "AI / Frontend"];
 
 const Portfolio = () => {
     const navigate = useNavigate();
@@ -83,7 +112,7 @@ const Portfolio = () => {
 
     const filtered = activeFilter === "All"
         ? projects
-        : projects.filter((p) => p.category === activeFilter);
+        : projects.filter((p) => p.category === activeFilter || p.category.includes(activeFilter));
 
     useEffect(() => {
         const handleScroll = () => {
@@ -204,15 +233,14 @@ const Portfolio = () => {
                                     onMouseEnter={() => setHoveredId(project.id)}
                                     onMouseLeave={() => setHoveredId(null)}
                                 >
-                                    <div className="card-thumbnail">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="card-image"
-                                        />
+                                    <div
+                                        className="card-thumbnail"
+                                        style={{ background: project.gradient }}
+                                    >
+                                        <span className="card-emoji">{project.icon}</span>
                                         <div
                                             className="card-glow"
-                                            style={{ background: project.accent, opacity: hoveredId === project.id ? 0.18 : 0 }}
+                                            style={{ background: project.accent, opacity: hoveredId === project.id ? 0.25 : 0.1 }}
                                         />
                                         <div className="card-status-badge" style={{ borderColor: project.accent, color: project.accent }}>
                                             <span className="status-dot" style={{ background: project.accent }} />
@@ -248,6 +276,10 @@ const Portfolio = () => {
                                                 <Layers size={12} />
                                                 {project.category}
                                             </span>
+                                            <div className="card-stats">
+                                                <span><Star size={12} /> {project.stars}</span>
+                                                <span><Eye size={12} /> {project.views}</span>
+                                            </div>
                                         </div>
 
                                         <h3 className="card-title">
@@ -296,7 +328,7 @@ const Portfolio = () => {
                             <span>More projects on GitHub</span>
                             <button
                                 className="portfolio-btn cta-btn"
-                                onClick={() => openLink("https://github.com/roland-adams2007")}
+                                onClick={() => openLink("https://github.com")}
                             >
                                 <Github size={16} /> View GitHub Profile
                             </button>
@@ -379,26 +411,23 @@ const Portfolio = () => {
 
                 .card-thumbnail {
                     position: relative;
-                    height: 200px;
+                    height: 180px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     overflow: hidden;
                 }
 
-                .card-image {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    display: block;
-                    transition: transform 0.4s ease;
-                }
-
-                .portfolio-card:hover .card-image {
-                    transform: scale(1.04);
+                .card-emoji {
+                    font-size: 4rem;
+                    position: relative;
+                    z-index: 2;
+                    filter: drop-shadow(0 4px 20px rgba(0,0,0,0.5));
                 }
 
                 .card-glow {
                     position: absolute;
                     inset: 0;
-                    pointer-events: none;
                     transition: opacity 0.3s ease;
                 }
 
@@ -415,7 +444,7 @@ const Portfolio = () => {
                     display: flex;
                     align-items: center;
                     gap: 0.35rem;
-                    background: rgba(0, 0, 0, 0.55);
+                    background: rgba(0, 0, 0, 0.5);
                     backdrop-filter: blur(8px);
                     z-index: 3;
                 }
@@ -481,6 +510,19 @@ const Portfolio = () => {
                     color: rgba(147, 112, 219, 0.9);
                     font-weight: 500;
                     letter-spacing: 0.03em;
+                }
+
+                .card-stats {
+                    display: flex;
+                    gap: 0.75rem;
+                    font-size: 0.75rem;
+                    color: rgba(255, 255, 255, 0.4);
+                }
+
+                .card-stats span {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.25rem;
                 }
 
                 .card-title {
@@ -641,3 +683,68 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+prompt:
+
+general repo:https://github.com/roland-adams2007
+
+help me remove this existing card and put this new one:
+
+ff.png:
+this is a website similar to cloudiary, it is a cloud file strong the minified version( give more summary but don't make it to long)
+
+link: https://fileflow-sable.vercel.app/
+name: fileflow
+source: https://github.com/roland-adams2007/fileflow
+status: live
+image: ff.png
+stack: react, nodejs, mysql, tailwind
+fullstack
+
+
+tixora.png:
+this is event ticketing platform
+
+link:https://tixora.com.ng/
+name: tixora
+source: https://github.com/roland-adams2007/tixora
+status: live
+image: tixora.png
+stack: react, php, mysql, tailwind
+fullstack
+
+cp.png:
+Creator Workspace is a centralized platform for creators and businesses to build, manage, and publish multiple websites 
+
+link: https://creatorspace-wine.vercel.app/
+name:creatorspace
+source: https://github.com/roland-adams2007/CSpace
+status: live
+image: cp.png
+stack: react, nodejs, mysql, framer-motion
+fullstack
+
+tf.png:
+The ultimate task management platform that helps teams collaborate, organize, and achieve more. Track projects, manage deadlines, and boost productivity all in one place.
+
+link: https://taskflow-nu-seven.vercel.app/
+name: taskflow
+source: https://github.com/roland-adams2007/taskflow
+status: live
+image: tf.png
+stack: react, nodejs, mysql
+fullstack
+
+
+paynix.png:
+an online bank
+
+link: https://paynix-tau.vercel.app/
+name:paynix
+source: https://github.com/roland-adams2007/paynix
+status: live
+image: paynix.png
+stack: react, php, framer-motion, tailwind
+frontend
+
+remove the views and star iconm, give me full code with no comments

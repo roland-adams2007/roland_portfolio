@@ -9,34 +9,23 @@ import tixora from "../assets/tixora.png";
 import tf from "../assets/tf.png";
 import cp from "../assets/cp.png";
 import paynix from "../assets/paynix.png";
+import crypto from "../assets/crypto.png";
 
 const projects = [
     {
         id: 1,
-        title: "FileFlow",
-        description: "A cloud file storage platform similar to Cloudinary — upload, manage, and access your files from anywhere with a clean, minimal interface and fast delivery.",
-        tags: ["React", "Node.js", "MySQL", "Tailwind CSS"],
+        title: "CryptoPulse",
+        description: "CryptoPulse is a real-time cryptocurrency tracking dashboard that displays live prices, market trends, and key data for popular digital assets. It helps users quickly monitor the crypto market and stay updated on price movements and market activity.",
+        tags: ["React", "Node.js", "Redis", "CryptoGecko API"],
         category: "Full-Stack",
         status: "Live",
-        github: "https://github.com/roland-adams2007/fileflow",
-        live: "https://fileflow-sable.vercel.app/",
-        image: ff,
-        accent: "#38bdf8",
+        github: "https://github.com/roland-adams2007/cryptopulse",
+        live: "https://cryptopulse-blush-ten.vercel.app/",
+        image: crypto,
+        accent: "#1e3a8a", // dark blue
     },
     {
         id: 2,
-        title: "Tixora",
-        description: "An event ticketing platform to discover, create, and manage events. Buy and sell tickets seamlessly with a smooth checkout experience.",
-        tags: ["React", "PHP", "MySQL", "Tailwind CSS"],
-        category: "Full-Stack",
-        status: "Live",
-        github: "https://github.com/roland-adams2007/tixora",
-        live: "https://tixora.com.ng/",
-        image: tixora,
-        accent: "#f97316",
-    },
-    {
-        id: 3,
         title: "CreatorSpace",
         description: "A centralized workspace for creators and businesses to build, manage, and publish multiple websites — all from one powerful dashboard.",
         tags: ["React", "Node.js", "MySQL", "Framer Motion"],
@@ -48,7 +37,31 @@ const projects = [
         accent: "#a78bfa",
     },
     {
+        id: 3,
+        title: "FileFlow",
+        description: "A cloud file storage platform similar to Cloudinary — upload, manage, and access your files from anywhere with a clean, minimal interface and fast delivery.",
+        tags: ["React", "Node.js", "MySQL", "Tailwind CSS"],
+        category: "Full-Stack",
+        status: "Live",
+        github: "https://github.com/roland-adams2007/fileflow",
+        live: "https://fileflow-sable.vercel.app/",
+        image: ff,
+        accent: "#38bdf8",
+    },
+    {
         id: 4,
+        title: "Tixora",
+        description: "An event ticketing platform to discover, create, and manage events. Buy and sell tickets seamlessly with a smooth checkout experience.",
+        tags: ["React", "PHP", "MySQL", "Tailwind CSS"],
+        category: "Full-Stack",
+        status: "Live",
+        github: "https://github.com/roland-adams2007/tixora",
+        live: "https://tixora.com.ng/",
+        image: tixora,
+        accent: "#f97316",
+    },
+    {
+        id: 5,
         title: "TaskFlow",
         description: "The ultimate task management platform that helps teams collaborate, organize, and achieve more. Track projects, manage deadlines, and boost productivity.",
         tags: ["React", "Node.js", "MySQL"],
@@ -60,7 +73,7 @@ const projects = [
         accent: "#34d399",
     },
     {
-        id: 5,
+        id: 6,
         title: "Paynix",
         description: "A modern online banking experience — manage your finances, send money, and track transactions through a sleek and intuitive interface.",
         tags: ["React", "PHP", "Framer Motion", "Tailwind CSS"],
@@ -72,7 +85,6 @@ const projects = [
         accent: "#fbbf24",
     },
 ];
-
 const categories = ["All", "Full-Stack", "Frontend"];
 
 const Portfolio = () => {

@@ -192,7 +192,7 @@ const Home = () => {
                                 </div>
                                 <div
                                     className="social-link"
-                                    onClick={() => openLink("https://twitter.com")}
+                                    onClick={() => openLink("https://x.com/R_coredev")}
                                 >
                                     <Twitter size={20} />
                                 </div>

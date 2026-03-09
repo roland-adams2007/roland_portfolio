@@ -142,7 +142,7 @@ const Contact = () => {
                                 <div className="social-link" onClick={() => openLink("https://www.linkedin.com/in/roland-adams-045965315")}>
                                     <Linkedin size={20} />
                                 </div>
-                                <div className="social-link" onClick={() => openLink("https://twitter.com")}>
+                                <div className="social-link" onClick={() => openLink("https://x.com/R_coredev")}>
                                     <Twitter size={20} />
                                 </div>
                             </div>
